@@ -1,16 +1,15 @@
-# morie
+#Morie
 
-A new Flutter project.
+Morie is an app dedicated to supporting mothers' mental health. Through daily reflection and open forum discussion, mothers can feel supported, embodied with the community, and thus increase their well-being health.
 
-## Getting Started
+#### Sign Up Page
+![signup](assets/signup_page.jpeg)
 
-This project is a starting point for a Flutter application.
+#### Log In Page
+![login](assets/login_page.jpeg)
 
-A few resources to get you started if this is your first Flutter project:
+#### Reset Password
+![reset_pass](assets/resetpass_page.jpeg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Signed In
+![signedin](assets/signedin_status.jpeg)
