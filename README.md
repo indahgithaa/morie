@@ -1,15 +1,15 @@
-#Morie
+# Morie
 
 Morie is an app dedicated to supporting mothers' mental health. Through daily reflection and open forum discussion, mothers can feel supported, embodied with the community, and thus increase their well-being health.
 
 #### Sign Up Page
-![signup](assets/signup_page.jpeg)
+<img src="assets/signup_page.jpeg" width="200">
 
 #### Log In Page
-![login](assets/login_page.jpeg)
+<img src="assets/login_page.jpeg" width="200">
 
 #### Reset Password
-![reset_pass](assets/resetpass_page.jpeg)
+<img src="assets/resetpass_page.jpeg" width="200">
 
 #### Signed In
-![signedin](assets/signedin_status.jpeg)
+<img src="assets/signedin_status.jpeg" width="200">
