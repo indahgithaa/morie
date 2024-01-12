@@ -18,89 +18,164 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 0),
-              child: Text(
-                'Your answer is everything.\nStay linked - stay resilient.',
-                style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                  height: 1,
-                  color: Color(0xff000000),
-                ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 0),
+            child: Text(
+              'Your answer is everything.\nStay linked - stay resilient.',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                height: 1,
+                color: Color(0xff000000),
               ),
             ),
-            Container(
-              margin:  EdgeInsets.fromLTRB(20, 10, 15, 21),
-              width:  double.infinity,
-              child:  
-              Row(
-                crossAxisAlignment:  CrossAxisAlignment.center,
-                children:  [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 1, 4, 0),
-                    width: 34,
-                    height: 34,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(17),
-                      color: Color(0xffd9d9d9),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset(
-                        'assets/mom_profpic.svg',
-                        fit: BoxFit.cover,
-                      ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 10, 15, 21),
+            width: double.infinity,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 1, 4, 0),
+                  width: 34,
+                  height: 34,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                    color: Color(0xffd9d9d9),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      'assets/mom_profpic.svg',
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(5, 12.5, 5, 11.5),
-                    width: 304,
-                    height: 47,
-                    decoration: BoxDecoration(
-                      color: Color(0xffaed3ff),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      'Write something...',
-                      style: TextStyle(
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(5, 12.5, 5, 11.5),
+                  width: 304,
+                  height: 47,
+                  decoration: BoxDecoration(
+                    color: Color(0xffaed3ff),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: TextField(
+                    textAlignVertical: TextAlignVertical.center,
+                    decoration: InputDecoration(
+                      hintText: 'Write something...',
+                      hintStyle: TextStyle(
                         fontFamily: 'Roboto',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         height: 1.4375,
                         color: Color(0xff000000),
                       ),
+                      contentPadding: EdgeInsets.symmetric(vertical: 7.5),
+                      border: InputBorder.none,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: topics.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(topics[index].title),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              TopicDetailsPage(topic: topics[index]),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(20, 0, 14.5, 0),
+            height: 28,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  width: 38,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xff6dadf9),
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'All',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 1.6428571429,
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 121, 0),
+                  width: 71,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xff6dadf9),
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Recent',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 1.6428571429,
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 110,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xff6dadf9),
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Filter topics',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 1.6428571429,
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: topics.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(topics[index].title),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TopicDetailsPage(topic: topics[index]),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
