@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Topic {
+  String username;
+  String userPicturePath;
+  String userStatus;
   String title;
   String content;
   String imagePath;
 
-  Topic(this.title, this.content, this.imagePath);
+  Topic(this.username, this.userPicturePath, this.userStatus, this.title, this.content, this.imagePath);
 }
 
 class ForumPage extends StatelessWidget {
   final List<Topic> topics = [
-    Topic('Topic 1', 'Content of Topic 1', 'assets/yoga_pic.png'),
-    Topic('Topic 2', 'Content of Topic 2', ''),
-    Topic('Topic 3', 'Content of Topic 3', ''),
+    Topic('@sitied', 'assets/sitied_profpic.png', 'soon to be mom', 'Topic 1', 'Content of Topic 1', 'assets/yoga_pic.png'),
+    Topic('@mum', 'assets/mum_profpic.png', 'Average', 'Topic 2', 'Content of Topic 2', ''),
   ];
 
   @override
@@ -158,21 +160,76 @@ class ForumPage extends StatelessWidget {
           Expanded(
             child: Container(
               child: ListView.builder(
-              itemCount: topics.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(topics[index].title),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => TopicDetailsPage(topic: topics[index]),
+                itemCount: topics.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage: AssetImage(topics[index].imagePath),
+                                radius: 20,
+                              ),
+                              SizedBox(width: 16),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Username',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      SizedBox(width: 8),
+                                      Text(
+                                        'Follow',
+                                        style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'Username Status',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 8), // Add some spacing
+                          Text(
+                            topics[index].title,
+                            style: TextStyle(
+                              fontSize: 18, // Adjust the font size as needed
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                    );
-                  },
-                );
-              },
-            ),
+                    ),
+                    subtitle: Text(topics[index].content),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TopicDetailsPage(topic: topics[index]),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ],

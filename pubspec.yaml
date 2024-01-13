@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/mom_profpic.svg
     - assets/mom_profpic.png
+    - assets/sitied_profpic.png
+    - assets/mum_profpic.png
     - assets/yoga_pic.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
