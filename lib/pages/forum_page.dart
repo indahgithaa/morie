@@ -47,12 +47,9 @@ class ForumPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(17),
                     color: Color(0xffd9d9d9),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset(
-                      'assets/mom_profpic.svg',
-                      fit: BoxFit.cover,
+                    image:  DecorationImage (
+                      fit:  BoxFit.cover,
+                      image: AssetImage('assets/mom_profpic.png'),
                     ),
                   ),
                 ),
