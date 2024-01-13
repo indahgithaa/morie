@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Topic {
-  final String title;
-  final String content;
+  String title;
+  String content;
+  String imagePath;
 
-  Topic(this.title, this.content);
+  Topic(this.title, this.content, this.imagePath);
 }
 
 class ForumPage extends StatelessWidget {
   final List<Topic> topics = [
-    Topic('Topic 1', 'Content of Topic 1'),
-    Topic('Topic 2', 'Content of Topic 2'),
-    Topic('Topic 3', 'Content of Topic 3'),
+    Topic('Topic 1', 'Content of Topic 1', 'assets/yoga_pic.png'),
+    Topic('Topic 2', 'Content of Topic 2', ''),
+    Topic('Topic 3', 'Content of Topic 3', ''),
   ];
 
   @override
@@ -155,7 +156,8 @@ class ForumPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView.builder(
+            child: Container(
+              child: ListView.builder(
               itemCount: topics.length,
               itemBuilder: (context, index) {
                 return ListTile(
@@ -170,6 +172,7 @@ class ForumPage extends StatelessWidget {
                   },
                 );
               },
+            ),
             ),
           ),
         ],
@@ -187,7 +190,7 @@ class TopicDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(topic.title),
+        title: Text('Post'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -239,9 +242,11 @@ class TopicDetailsPage extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(topic.content),
+              if (topic.imagePath.isNotEmpty) Image.asset(topic.imagePath),
             ],
           ),
         ),
+
       ),
     );
   }
