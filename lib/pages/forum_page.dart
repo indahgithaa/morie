@@ -227,8 +227,17 @@ class ForumPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      subtitle: 
-                      Text(topics[index].content),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(topics[index].content),
+                          if (topics[index].imagePath.isNotEmpty)
+                            Container(
+                              margin: EdgeInsets.only(top: 10),
+                              child: Image.asset(topics[index].imagePath),
+                            ),
+                        ],
+                      ),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -312,7 +321,10 @@ class TopicDetailsPage extends StatelessWidget {
               Text(
                 topic.content
               ),
-              if (topic.imagePath.isNotEmpty) Image.asset(topic.imagePath),
+              if (topic.imagePath.isNotEmpty) Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Image.asset(topic.imagePath),
+              ),
             ],
           ),
         ),
