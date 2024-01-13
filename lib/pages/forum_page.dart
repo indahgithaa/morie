@@ -14,8 +14,8 @@ class Topic {
 
 class ForumPage extends StatelessWidget {
   final List<Topic> topics = [
-    Topic('@sitied', 'assets/sitied_profpic.png', 'soon to be mom', 'Topic 1', 'Content of Topic 1', 'assets/yoga_pic.png'),
-    Topic('@mum', 'assets/mum_profpic.png', 'Average', 'Topic 2', 'Content of Topic 2', ''),
+    Topic('@sitied', 'assets/sitied_profpic.png', 'soon to be mom', 'Pregnancy Update, Yoga stuff.', 'Just wanted to share a little snippet of my pregnancy journey intertwined with the soothing embrace of yoga. These prenatal yoga sessions have become my sanctuary, a sacred time where I connect with both my body and the tiny soul growing within.', 'assets/yoga_pic.png'),
+    Topic('@mum', 'assets/mum_profpic.png', 'Average housewife', 'Delicious healthy recipe for mom! :D', 'Just wanted to drop a quick note from the heart of daily homemaker life. Juggling chores, meals, and the never-ending laundry feels like a marathon sometimes, but there\'s a unique magic in it all. From the sizzling sounds in the kitchen to the cozy chaos of family life, these are the real moments that make a home.', ''),
   ];
 
   @override
@@ -162,71 +162,82 @@ class ForumPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: topics.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage(topics[index].imagePath),
-                                radius: 20,
-                              ),
-                              SizedBox(width: 16),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        'Username',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                      SizedBox(width: 8),
-                                      Text(
-                                        'Follow',
-                                        style: TextStyle(
-                                          color: Colors.blue,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Text(
-                                    'Username Status',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8), // Add some spacing
-                          Text(
-                            topics[index].title,
-                            style: TextStyle(
-                              fontSize: 18, // Adjust the font size as needed
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                  return Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: Color(0xffD2D2D2),
+                          width: 5.0,
+                        ),
                       ),
                     ),
-                    subtitle: Text(topics[index].content),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TopicDetailsPage(topic: topics[index]),
+                    child: ListTile(
+                      title: Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: AssetImage(topics[index].userPicturePath),
+                                  radius: 20,
+                                ),
+                                SizedBox(width: 16),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          topics[index].username,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                        SizedBox(width: 8),
+                                        Text(
+                                          'Follow',
+                                          style: TextStyle(
+                                            color: Colors.blue,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      topics[index].userStatus,
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              topics[index].title,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
-                      );
-                    },
+                      ),
+                      subtitle: 
+                      Text(topics[index].content),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TopicDetailsPage(topic: topics[index]),
+                          ),
+                        );
+                      },
+                    ),
                   );
                 },
               ),
@@ -258,7 +269,7 @@ class TopicDetailsPage extends StatelessWidget {
               Row(
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage('assets/mom_profpic.png'),
+                    backgroundImage: AssetImage(topic.userPicturePath),
                     radius: 20,
                   ),
                   SizedBox(width: 16),
@@ -268,7 +279,7 @@ class TopicDetailsPage extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Username',
+                            topic.username,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
@@ -283,7 +294,7 @@ class TopicDetailsPage extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        'Username Status',
+                        topic.userStatus,
                         style: TextStyle(
                           color: Colors.grey,
                         ),
@@ -298,12 +309,13 @@ class TopicDetailsPage extends StatelessWidget {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16),
-              Text(topic.content),
+              Text(
+                topic.content
+              ),
               if (topic.imagePath.isNotEmpty) Image.asset(topic.imagePath),
             ],
           ),
         ),
-
       ),
     );
   }
