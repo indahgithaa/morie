@@ -12,7 +12,7 @@ class Topic {
 }
 
 class ForumPage extends StatelessWidget {
-  final List<Topic> topics = [
+  List<Topic> topics = [
     Topic('@sitied', 'assets/sitied_profpic.png', 'soon to be mom', 'Pregnancy Update, Yoga stuff.', 'Just wanted to share a little snippet of my pregnancy journey intertwined with the soothing embrace of yoga. These prenatal yoga sessions have become my sanctuary, a sacred time where I connect with both my body and the tiny soul growing within.', 'assets/yoga_pic.png'),
     Topic('@mum', 'assets/mum_profpic.png', 'Average housewife', 'Delicious healthy recipe for mom! :D', 'Just wanted to drop a quick note from the heart of daily homemaker life. Juggling chores, meals, and the never-ending laundry feels like a marathon sometimes, but there\'s a unique magic in it all. From the sizzling sounds in the kitchen to the cozy chaos of family life, these are the real moments that make a home.', ''),
   ];
@@ -325,10 +325,10 @@ class TopicDetailsPage extends StatelessWidget {
                 topic.content,
               ),
               if (topic.imagePath.isNotEmpty)
-                Container(
-                  margin: EdgeInsets.only(top: 10),
-                  child: Image.asset(topic.imagePath),
-                ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Image.asset(topic.imagePath),
+              ),
             ],
           ),
         ),
