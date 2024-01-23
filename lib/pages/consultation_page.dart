@@ -174,109 +174,121 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage(doctor.imagePath),
-                fit: BoxFit.cover,
+      padding: const EdgeInsets.only(bottom: 15),
+      child: Container(
+        padding: EdgeInsets.all(15), // Add padding for each card
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(doctor.imagePath),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                PriceTag(price: doctor.price),
-                SizedBox(height: 5),
-                Text(
-                  doctor.doctorName,
-                  style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    height: 1.0416666667,
-                    color: Color(0xFF000000),
+            SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  PriceTag(price: doctor.price),
+                  SizedBox(height: 5),
+                  Text(
+                    doctor.doctorName,
+                    style: TextStyle(
+                      fontFamily: 'Lato',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      height: 1.0416666667,
+                      color: Color(0xFF000000),
+                    ),
                   ),
-                ),
-                Text(
-                  doctor.job,
-                  style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                    height: 1.5,
-                    color: Color(0xFF000000),
+                  Text(
+                    doctor.job,
+                    style: TextStyle(
+                      fontFamily: 'Lato',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 1.5,
+                      color: Color(0xFF000000),
+                    ),
                   ),
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                      size: 18,
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      doctor.rate,
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5,
-                        color: Color(0xFF000000),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 18,
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      doctor.totalClients,
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5,
-                        color: Color(0xFF000000),
+                      SizedBox(width: 4),
+                      Text(
+                        doctor.rate,
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5,
+                          color: Color(0xFF000000),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {
-                    // Add your Chat Now button functionality here
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF006EF9),
-                    onPrimary: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(10),
-                        right: Radius.circular(10),
-                      ),
-                    ),
-                    side: BorderSide.none,
-                    elevation: 0,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    minimumSize: Size(double.infinity, 0),
+                    ],
                   ),
-                  child: Text('Chat Now'),
-                ),
-              ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        doctor.totalClients,
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: Color(0xFF000000),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Add your button functionality here
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF006EF9),
+                      onPrimary: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40), // Wider button and centered horizontally
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      side: BorderSide.none,
+                      elevation: 0,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      minimumSize: Size(double.infinity, 0),
+                    ),
+                    child: Text('Chat Now'),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -302,8 +314,8 @@ class PriceTag extends StatelessWidget {
         price,
         style: TextStyle(
           fontFamily: 'Lato',
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
           height: 1.5,
           color: Color.fromARGB(255, 0, 112, 250),
         ),
