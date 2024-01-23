@@ -33,7 +33,17 @@ class _TrackerPageState extends State<TrackerPage> {
   }
 
   Widget _buildDefaultSingleDatePickerWithValue() {
-    final config = CalendarDatePicker2Config();
+    final config = CalendarDatePicker2Config(
+      yearBuilder: ({
+        required year,
+        decoration,
+        isCurrentYear,
+        isDisabled,
+        isSelected,
+        textStyle,
+      }) {
+      },
+    );
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
