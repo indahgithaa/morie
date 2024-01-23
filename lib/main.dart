@@ -7,7 +7,6 @@ import 'package:morie/pages/home_page.dart';
 import 'package:morie/pages/meditate_page.dart';
 import 'package:morie/pages/relax_page.dart';
 import 'package:morie/pages/relax_second_page.dart';
-import 'package:morie/pages/test2.dart';
 import 'auth/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
