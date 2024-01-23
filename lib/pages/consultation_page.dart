@@ -8,12 +8,15 @@ class Doctor {
   String totalClients;
   String imagePath;
 
-  Doctor(this.price, this.doctorName, this.job, this.rate, this.totalClients, this.imagePath);
+  Doctor(this.price, this.doctorName, this.job, this.rate, this.totalClients,
+      this.imagePath);
 }
 
 List<Doctor> doctors = [
-  Doctor('Rp50.000', 'dr. Amrita Putri Santoso, Sp.KJ', 'Psychiatrist', '4.9/5.0', '491 client(s)', 'assets/amrita.jpg'),
-  Doctor('Rp100.000', 'dr. Nadia Geraldine, Sp.OG', 'Obstetrician', '5.0/5.0', '211 client(s)', 'assets/nadia.jpg'),
+  Doctor('Rp50.000', 'dr. Amrita Putri Santoso, Sp.KJ', 'Psychiatrist',
+      '4.9/5.0', '491 client(s)', 'assets/amrita.jpg'),
+  Doctor('Rp100.000', 'dr. Nadia Geraldine, Sp.OG', 'Obstetrician', '5.0/5.0',
+      '211 client(s)', 'assets/nadia.jpg'),
 ];
 
 class ConsultationPage extends StatelessWidget {
@@ -27,19 +30,18 @@ class ConsultationPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.only(bottom: 10, top: 61),
-              child: Text(
-                'Find Professionals',
-                style: TextStyle(
-                  fontFamily: 'Lato',
-                  fontSize: 24,
-                  fontWeight: FontWeight.w700,
-                  height: 1.0416666667,
-                  color: Color(0xFF000000),
-                ),
+            SizedBox(height: 61),
+            Text(
+              'Find Professionals',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                height: 1.0416666667,
+                color: Color(0xFF000000),
               ),
             ),
+            SizedBox(height: 10),
             Container(
               width: 232,
               height: 25,
@@ -73,176 +75,237 @@ class ConsultationPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 15),
             Row(
               children: [
-                Container(
-                  margin: EdgeInsets.only(right: 223, top: 15),
-                  child: Text(
-                    'Categories',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                      height: 1.6666666667,
-                      color: Color(0xff000000),
-                    ),
+                Text(
+                  'Categories',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    height: 1.6666666667,
+                    color: Color(0xff000000),
                   ),
                 ),
-                Center(
-                  child: Text(
-                    'View All',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      height: 1.9166666667,
-                      color: Color(0xff6b90bb),
-                    ),
+                Spacer(),
+                Text(
+                  'View All',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    height: 1.9166666667,
+                    color: Color(0xff6b90bb),
                   ),
                 ),
               ],
             ),
+            SizedBox(height: 17.5),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 0, 17.5),
               height: 25,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 1, 0, 0),
-                      width: 89,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff6dadf9),
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Mental Health',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            height: 1.9166666667,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CategoryContainer('Mental Health'),
                     SizedBox(width: 11),
-                    Container(
-                      width: 89,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff6dadf9),
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Pregnancy',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            height: 1.9166666667,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CategoryContainer('Pregnancy'),
                     SizedBox(width: 11),
-                    Container(
-                      width: 89,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff6dadf9),
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Children',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            height: 1.9166666667,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CategoryContainer('Children'),
                     SizedBox(width: 11),
-                    Container(
-                      width: 89,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff6dadf9),
-                        borderRadius: BorderRadius.circular(7),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Nutritions',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            height: 1.9166666667,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CategoryContainer('Nutritions'),
                   ],
                 ),
               ),
             ),
             Expanded(
-  child: ListView.builder(
-    itemCount: doctors.length,
-    itemBuilder: (BuildContext context, int index) {
-      Doctor doctor = doctors[index];
-      return Stack(
-        children: [
-          ListTile(
-            title: Text(doctor.doctorName),
-            subtitle: Text('${doctor.job} - ${doctor.rate} - ${doctor.totalClients}'),
-            leading: Image.asset(doctor.imagePath),
-            // Add more details as needed
+              child: ListView.builder(
+                itemCount: doctors.length,
+                itemBuilder: (context, index) {
+                  return DoctorCard(doctor: doctors[index]);
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CategoryContainer extends StatelessWidget {
+  final String category;
+
+  const CategoryContainer(this.category);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 89,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        color: Color(0xff6dadf9),
+        borderRadius: BorderRadius.circular(7),
+      ),
+      child: Center(
+        child: Text(
+          category,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            height: 1.9166666667,
+            color: Color(0xffffffff),
           ),
-          Positioned(
-            left: 15,
-            top: 0,
-            child: Align(
-              child: SizedBox(
-                width: 44,
-                height: 23,
-                child: Text(
-                  doctor.price,
-                  style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 10,
-                    fontWeight: FontWeight.w700,
-                    height: 2.3,
-                    color: Color(0xff1d84ff),
-                  ),
-                ),
+        ),
+      ),
+    );
+  }
+}
+
+class DoctorCard extends StatelessWidget {
+  final Doctor doctor;
+
+  const DoctorCard({required this.doctor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                image: AssetImage(doctor.imagePath),
+                fit: BoxFit.cover,
               ),
             ),
           ),
+          SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                PriceTag(price: doctor.price),
+                SizedBox(height: 5),
+                Text(
+                  doctor.doctorName,
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    height: 1.0416666667,
+                    color: Color(0xFF000000),
+                  ),
+                ),
+                Text(
+                  doctor.job,
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    height: 1.5,
+                    color: Color(0xFF000000),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                      size: 18,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      doctor.rate,
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        height: 1.5,
+                        color: Color(0xFF000000),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      doctor.totalClients,
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        height: 1.5,
+                        color: Color(0xFF000000),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    // Add your Chat Now button functionality here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFF006EF9),
+                    onPrimary: Colors.white,
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(10),
+                        right: Radius.circular(10),
+                      ),
+                    ),
+                    side: BorderSide.none,
+                    elevation: 0,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    minimumSize: Size(double.infinity, 0),
+                  ),
+                  child: Text('Chat Now'),
+                ),
+              ],
+            ),
+          ),
         ],
-      );
-    },
-  ),
-),
+      ),
+    );
+  }
+}
 
-          ],
+class PriceTag extends StatelessWidget {
+  final String price;
+
+  const PriceTag({required this.price});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 3,
+      ),
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 160, 203, 255).withOpacity(0.5),
+        borderRadius: BorderRadius.circular(3),
+      ),
+      child: Text(
+        price,
+        style: TextStyle(
+          fontFamily: 'Lato',
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          height: 1.5,
+          color: Color.fromARGB(255, 0, 112, 250),
         ),
       ),
     );
