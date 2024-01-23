@@ -23,10 +23,34 @@ class _TrackerPageState extends State<TrackerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Container(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              child: SvgPicture.asset('assets/icons/menu.svg'))
+        ],
       ),
       body: Column(
         children: [
           _buildDefaultSingleDatePickerWithValue(),
+          Expanded(
+            child: Container(
+              height: 80,
+              width: 80,
+              child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Color(0xffD9D9D9),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.black,
+                      size: 45,
+                    ),
+                    onPressed: () {
+                      // ...
+                    },
+                  )),
+            ),
+          )
         ],
       ),
     );
@@ -43,15 +67,22 @@ class _TrackerPageState extends State<TrackerPage> {
         isSelected,
         textStyle,
       }) {
-        return Center(
-          child: Container(
-            decoration: decoration,
-            height: 36,
-            width: 72,
-          
-          ),
-        );
       },
+      weekdayLabels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      weekdayLabelTextStyle: const TextStyle(
+          color: Colors.black87,
+          fontSize: 16),
+      firstDayOfWeek: 0,
+      controlsHeight: 50,
+      calendarType: CalendarDatePicker2Type.single,
+      controlsTextStyle: const TextStyle(
+        color: Colors.black,
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+      ),
+      dayTextStyle: const TextStyle(
+          color: Colors.black,
+          fontSize: 16),
     );
     return Column(
       mainAxisSize: MainAxisSize.min,
