@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:morie/pages/forum_page.dart';
 import 'package:morie/pages/home_page.dart';
 import 'package:morie/pages/tracker_page.dart';
+import 'package:morie/pages/register_page.dart';
+import 'package:morie/pages/login_page.dart';
+import 'package:morie/pages/relax_page.dart';
+import 'package:morie/pages/consultation_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +21,8 @@ class _MyHomePageState extends State<MyApp> {
   Widget _screen1 = HomePage();
   Widget _screen2 = TrackerPage();
   Widget _screen3 = ForumPage();
+  Widget _screen4 = RelaxPage();
+  Widget _screen5 = ConsultationPage();
 
   // Keep track of the selected index
   int selectedIndex = 0;
@@ -74,6 +80,28 @@ class _MyHomePageState extends State<MyApp> {
                     color: Colors.black,
                   ),
                 ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.handshake,
+                    color: Colors.grey,
+                  ),
+                  label: '',
+                  activeIcon: Icon(
+                    Icons.back_hand_rounded,
+                    color: Colors.black,
+                  ),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.heat_pump_sharp,
+                    color: Colors.grey,
+                  ),
+                  label: '',
+                  activeIcon: Icon(
+                    Icons.people,
+                    color: Colors.black,
+                  ),
+                ),
               ],
             ),
           ),
@@ -95,7 +123,11 @@ class _MyHomePageState extends State<MyApp> {
       return this._screen1;
     } else if (this.selectedIndex == 1) {
       return this._screen2;
+    } else if (this.selectedIndex == 2) {
+      return this._screen3;
+    } else if (this.selectedIndex == 3) {
+      return this._screen4;
     }
-    return this._screen3;
+      return this._screen5;
   }
 }
