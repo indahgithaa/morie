@@ -34,6 +34,7 @@ class _TrackerPageState extends State<TrackerPage> {
 
   Widget _buildDefaultSingleDatePickerWithValue() {
     final config = CalendarDatePicker2Config(
+      selectedDayHighlightColor: Color(0xff6DADF9),
       yearBuilder: ({
         required year,
         decoration,
@@ -42,6 +43,14 @@ class _TrackerPageState extends State<TrackerPage> {
         isSelected,
         textStyle,
       }) {
+        return Center(
+          child: Container(
+            decoration: decoration,
+            height: 36,
+            width: 72,
+          
+          ),
+        );
       },
     );
     return Column(
