@@ -22,6 +22,8 @@ class _TrackerPageState extends State<TrackerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+      ),
       body: Column(
         children: [
           _buildDefaultSingleDatePickerWithValue(),
@@ -37,6 +39,15 @@ class _TrackerPageState extends State<TrackerPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 10),
+        Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              DateFormat('E, MMM d').format(DateTime.parse(_getValueText(
+                config.calendarType,
+                _singleDatePickerValueWithDefaultValue,
+              ).trim())),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            )),
         // const Text('Single Date Picker (With default value)'),
         CalendarDatePicker2(
           config: config,
@@ -44,21 +55,6 @@ class _TrackerPageState extends State<TrackerPage> {
           onValueChanged: (dates) =>
               setState(() => _singleDatePickerValueWithDefaultValue = dates),
         ),
-        const SizedBox(height: 10),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // const Text('Selection(s):  '),
-            const SizedBox(width: 10),
-            Text(
-              _getValueText(
-                config.calendarType,
-                _singleDatePickerValueWithDefaultValue,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 25),
       ],
     );
   }
