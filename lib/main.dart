@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:morie/pages/forum_page.dart';
 import 'package:morie/pages/home_page.dart';
 import 'package:morie/pages/tracker_page.dart';
-import 'package:morie/pages/register_page.dart';
-import 'package:morie/pages/login_page.dart';
 import 'package:morie/pages/relax_page.dart';
 import 'package:morie/pages/consultation_page.dart';
 
@@ -39,69 +38,46 @@ class _MyHomePageState extends State<MyApp> {
               topRight: Radius.circular(30.0),
             ),
             child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
               currentIndex: selectedIndex,
               onTap: onTapHandler,
               selectedIconTheme: IconThemeData(color: Colors.black),
               selectedLabelStyle: TextStyle(fontSize: 0),
               unselectedLabelStyle: TextStyle(fontSize: 0),
-              iconSize: 30.0,
+              iconSize: 28.0,
               backgroundColor: Color.fromRGBO(197, 227, 255, 1.0),
               items: [
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.grey,
-                  ),
-                  label: '',
-                  activeIcon: Icon(
-                    Icons.home,
-                    color: Colors.black,
-                  ),
-                ),
+                    icon: SvgPicture.asset('assets/icons/home.svg',
+                        color: Colors.grey),
+                    label: '',
+                    activeIcon: SvgPicture.asset('assets/icons/home.svg',
+                        color: Colors.black)),
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.calendar_month,
-                    color: Colors.grey,
-                  ),
-                  label: '',
-                  activeIcon: Icon(
-                    Icons.calendar_month,
-                    color: Colors.black,
-                  ),
-                ),
+                    icon: SvgPicture.asset('assets/icons/calendar.svg',
+                        color: Colors.grey),
+                    label: '',
+                    activeIcon: SvgPicture.asset('assets/icons/calendar.svg',
+                        color: Colors.black)),
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.people,
-                    color: Colors.grey,
-                  ),
-                  label: '',
-                  activeIcon: Icon(
-                    Icons.people,
-                    color: Colors.black,
-                  ),
-                ),
+                    icon: SvgPicture.asset('assets/icons/forums.svg',
+                        color: Colors.grey),
+                    label: '',
+                    activeIcon: SvgPicture.asset('assets/icons/forums.svg',
+                        color: Colors.black)),
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.handshake,
-                    color: Colors.grey,
-                  ),
-                  label: '',
-                  activeIcon: Icon(
-                    Icons.back_hand_rounded,
-                    color: Colors.black,
-                  ),
-                ),
+                    icon: SvgPicture.asset('assets/icons/meditation.svg',
+                        color: Colors.grey),
+                    label: '',
+                    activeIcon: SvgPicture.asset('assets/icons/meditation.svg',
+                        color: Colors.black)),
                 BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.heat_pump_sharp,
-                    color: Colors.grey,
-                  ),
-                  label: '',
-                  activeIcon: Icon(
-                    Icons.people,
-                    color: Colors.black,
-                  ),
-                ),
+                    icon: SvgPicture.asset('assets/icons/consultation.svg',
+                        color: Colors.grey),
+                    label: '',
+                    activeIcon: SvgPicture.asset(
+                        'assets/icons/consultation.svg',
+                        color: Colors.black)),
               ],
             ),
           ),
@@ -128,6 +104,6 @@ class _MyHomePageState extends State<MyApp> {
     } else if (this.selectedIndex == 3) {
       return this._screen4;
     }
-      return this._screen5;
+    return this._screen5;
   }
 }
