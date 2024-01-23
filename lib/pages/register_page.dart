@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -56,9 +58,9 @@ class _RegisterPageState extends State<RegisterPage> {
               children: [
                 const SizedBox(height: 50),
                 // Sign Up
-                const Text(
+                Text(
                   'Sign Up',
-                  style: TextStyle(
+                  style: GoogleFonts.lato(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
@@ -67,83 +69,98 @@ class _RegisterPageState extends State<RegisterPage> {
             
                 // continue with google
                 Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                       border: Border.all(color: Colors.black),
-                       borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Continue with Google',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                        ),
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.google),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Google',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
+                          ),
                       ),
                     ),
-                  ),
-                  ),
                   const SizedBox(height: 10),
             
                 // continue with facebook
                 Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                       border: Border.all(color: Colors.black),
-                       borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Continue with Facebook',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                        ),
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.facebook),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Facebook',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
+                          ),
                       ),
                     ),
-                  ),
-                  ),
                   const SizedBox(height: 10),
             
                 // continue with twitter
                 Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                       border: Border.all(color: Colors.black),
-                       borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Continue with Twitter',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                        ),
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.twitter),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Twitter',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
+                          ),
                       ),
                     ),
-                  ),
-                  ),
                   const SizedBox(height: 10),
             
                 // or
-                const Row(
+                Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'or',
-                        style: TextStyle(
+                        style: GoogleFonts.lato(
                           color: Colors.black87,
                           fontWeight: FontWeight.bold,
                           ),
@@ -156,6 +173,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    style: GoogleFonts.lato(),
                     controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -163,7 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Color.fromRGBO(109, 173, 249, 1)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Email',
@@ -178,13 +196,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    style: GoogleFonts.lato(),
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Color.fromRGBO(109, 173, 249, 1)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Phone Number',
@@ -193,22 +212,23 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 12),
 
                   // date of birth text
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Date of Birth',
-                        style: TextStyle(
+                        style: GoogleFonts.lato(
                           color: Colors.black54,
                           fontWeight: FontWeight.bold,
+                          fontSize: 15,
                           ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 12),
             
                 // date of birth textfields
                 Padding(
@@ -216,6 +236,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      // day
                       const Spacer(flex: 1),
                       Container(
                         width: MediaQuery.of(context).size.width / 3 - 32,
@@ -225,13 +246,13 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: const SingleChildScrollView(
+                        child: SingleChildScrollView(
                           child: TextField(
                             maxLength: 4,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               hintText: 'Day',
-                              hintStyle: TextStyle(fontSize: 15.0),
+                              hintStyle: GoogleFonts.lato(fontSize: 14.0),
                               contentPadding: EdgeInsets.only(top: 4.0, left: 10.0, right: 10.0, bottom: 5.0),
                               border: InputBorder.none,
                               suffixIcon: Padding(
@@ -252,13 +273,13 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: const SingleChildScrollView(
+                        child: SingleChildScrollView(
                           child: TextField(
                             maxLength: 4,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               hintText: 'Month',
-                              hintStyle: TextStyle(fontSize: 15.0),
+                              hintStyle: GoogleFonts.lato(fontSize: 14.0),
                               contentPadding: EdgeInsets.only(top: 4.0, left: 10.0, right: 10.0, bottom: 5.0),
                               border: InputBorder.none,
                               suffixIcon: Padding(
@@ -279,13 +300,13 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: const SingleChildScrollView(
+                        child: SingleChildScrollView(
                           child: TextField(
                             maxLength: 4,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               hintText: 'Year',
-                              hintStyle: TextStyle(fontSize: 15.0),
+                              hintStyle: GoogleFonts.lato(fontSize: 14.0),
                               contentPadding: EdgeInsets.only(top: 4.0, left: 10.0, right: 10.0, bottom: 5.0),
                               border: InputBorder.none,
                               suffixIcon: Padding(
@@ -301,12 +322,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 18),
             
                 // password textfield
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    style: GoogleFonts.lato(),
                     obscureText: true,
                     controller: _passwordController,
                     decoration: InputDecoration(
@@ -315,7 +337,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Color.fromRGBO(109, 173, 249, 1)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Password',
@@ -330,6 +352,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    style: GoogleFonts.lato(),
                     controller: _confirmPasswordController,
                     obscureText: true,
                     decoration: InputDecoration(
@@ -338,7 +361,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Color.fromRGBO(109, 173, 249, 1)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Confirm Password',
@@ -360,10 +383,10 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Color.fromRGBO(109, 173, 249, 1),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             'Register',
-                            style: TextStyle(
+                            style: GoogleFonts.lato(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
@@ -376,29 +399,32 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(height: 15),
             
                 // have an account? text
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Have an account?',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: widget.showLoginPage,
-                        child: Text(
-                          ' Sign in',
-                          style: TextStyle(
-                            color: Color.fromRGBO(0, 112, 244, 1),
+                Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Have an account?',
+                          style: GoogleFonts.lato(
                             fontWeight: FontWeight.bold,
-                            ),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(height: 2),
+                        GestureDetector(
+                          onTap: widget.showLoginPage,
+                          child: Text(
+                            'Sign In',
+                            style: GoogleFonts.lato(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              decoration:TextDecoration.underline,
+                              decorationColor: Colors.blue,
+                              ),
+                          ),
+                        ),
+                      ],
+                    ),
                   const SizedBox(height: 10),
-                  
+                  const SizedBox(height: 70),
                 ],
             ),
           ),

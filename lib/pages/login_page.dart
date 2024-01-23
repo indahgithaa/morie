@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import 'forgot_pw_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
@@ -23,6 +25,29 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  signInWithGoogle() async {
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    AuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+
+    print(userCredential.user?.displayName);
+  }
+
+  signInWithFacebook() async {
+    // TODO: implement signInWithFacebook
+  }
+
+  signInWithTwitter() async {
+    // TODO: implement signInWithTwitter
+  }
+
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -42,9 +67,9 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
               
                   // login 
-                  const Text(
-                    'Login',
-                    style: TextStyle(
+                  Text(
+                    'Log In',
+                    style: GoogleFonts.lato(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                     ),
@@ -54,82 +79,100 @@ class _LoginPageState extends State<LoginPage> {
                   // continue with google
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                         border: Border.all(color: Colors.black),
-                         borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Continue with Google',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
+                      child: GestureDetector(
+                        onTap: () => signInWithGoogle(),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.google),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Google',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                    ),
                     ),
                     const SizedBox(height: 10),
               
                   // continue with facebook
-                  Padding(
+                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                         border: Border.all(color: Colors.black),
-                         borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Continue with Facebook',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                        ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.facebook),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Facebook',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
+                          ),
                       ),
-                    ),
                     ),
                     const SizedBox(height: 10),
               
                   // continue with twitter
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                         border: Border.all(color: Colors.black),
-                         borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Continue with Twitter',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0), //buat align
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                        ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(FontAwesomeIcons.twitter),
+                              SizedBox(width: 8),
+                              Text(
+                              'Continue with Twitter',
+                              style: GoogleFonts.lato(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                              ),
+                            ],
+                          ),
                       ),
-                    ),
                     ),
                     const SizedBox(height: 10),
               
                     // or
-                  const Row(
+                  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'or',
-                          style: TextStyle(
+                          style: GoogleFonts.lato(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             ),
@@ -142,6 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextField(
+                      style: GoogleFonts.lato(),
                       controller: _emailController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -164,6 +208,7 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextField(
+                      style: GoogleFonts.lato(),
                       controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -194,10 +239,10 @@ class _LoginPageState extends State<LoginPage> {
                             color: Color.fromRGBO(109, 173, 249, 1),
                             borderRadius: BorderRadius.circular(12),
                             ),
-                            child: const Center(
+                            child: Center(
                               child: Text(
                                 'Login',
-                                style: TextStyle(
+                                style: GoogleFonts.lato(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -226,14 +271,17 @@ class _LoginPageState extends State<LoginPage> {
                         child: Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(109, 173, 249, 1),
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 1)
                             ),
-                            child: const Center(
+                            child: Center(
                               child: Text(
-                                'Forgot Password',
-                                style: TextStyle(
-                                  color: Colors.white,
+                                'Forgot Password?',
+                                style: GoogleFonts.lato(
+                                  color: Color.fromRGBO(109, 173, 249, 1),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                               ),
@@ -244,28 +292,33 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   const SizedBox(height: 15),
               
-                  // not a member? register now
-                  Row(
+                  // don't have an account? sign up
+                  Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Not a member?',
-                          style: TextStyle(
+                          'Don\'t have an account?',
+                          style: GoogleFonts.lato(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        SizedBox(height: 2),
                         GestureDetector(
                           onTap: widget.showRegisterPage,
                           child: Text(
-                            ' Sign Up',
-                            style: TextStyle(
+                            'Sign Up',
+                            style: GoogleFonts.lato(
                               color: Colors.blue,
                               fontWeight: FontWeight.bold,
+                              decoration:TextDecoration.underline,
+                              decorationColor: Colors.blue,
                               ),
                           ),
                         ),
                       ],
                     ),
+
+                    const SizedBox(height: 60),
                   ],
               ),
             ),
