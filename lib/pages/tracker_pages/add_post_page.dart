@@ -7,6 +7,7 @@ class AddPostScreen extends StatefulWidget {
   @override
   State<AddPostScreen> createState() => _AddPostScreenState();
 }
+
 class _AddPostScreenState extends State<AddPostScreen> {
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,36 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 ),
               ),
               SizedBox(height: 10),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                height: 300,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                child: Stack(
+                  children: [
+                    TextField(
+                      autofocus: false,
+                      maxLines: null,
+                      expands: true,
+                      textAlignVertical: TextAlignVertical.top,
+                      decoration: InputDecoration(
+                        hintText: "Write something...",
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: 30, horizontal: 20),
+                        hintStyle: TextStyle(
+                            color: Colors.white70,
+                            fontWeight: FontWeight.w400),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xff6C90BC)
+                      ),
+                    ),
+                  ],
+                )
+              ),
             ],
           ),
         ),
