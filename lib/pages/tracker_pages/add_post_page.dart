@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:morie/pages/tracker_pages/add_title_page.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});
@@ -153,7 +154,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         margin: EdgeInsets.symmetric(horizontal: 20),
                         child: ElevatedButton(
                             onPressed: () {
-                              //next page
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        AddTitlePostScreen()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xffA7CFFF),
