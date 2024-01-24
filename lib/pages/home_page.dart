@@ -38,12 +38,13 @@ class _HomePageState extends State<HomePage> {
             primary: false,
             child: Column(
               children: [
-                 Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  child: Image.asset('lib/assets/header.png'),
-                ),
+                SizedBox(height:70),
+                //  Positioned(
+                //   top: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: Image.asset('lib/assets/header.png'),
+                // ),
                
                 // "hello, emma!" text
                 Padding(
@@ -81,7 +82,8 @@ class _HomePageState extends State<HomePage> {
                 height: 260,
                  child: Stack(
                   children: [
-                     // kalender box
+                  
+                  // kalender box
                   Container(
                     height: 160,
                     width: 350,
@@ -103,7 +105,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ]
                         ),
-
                              
                         child: Column(
                           children: [
@@ -129,6 +130,7 @@ class _HomePageState extends State<HomePage> {
                                 Icon(Icons.arrow_right),
                               ],
                             ),
+
                              SizedBox(
                               height: 40,
                               width: 350,
@@ -156,6 +158,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ),
+
                             GridView.builder(
                               physics: const NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
@@ -163,12 +166,11 @@ class _HomePageState extends State<HomePage> {
                               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 7,
                                 ),
-                                itemCount: 7, // Show only 7 items for a single week
+                                itemCount: 7, 
                                 itemBuilder: (BuildContext context, int index) {
-                                  // Calculate the actual date index within the month
                                 int actualDateIndex = index + indexOfFirstDayMonth;
                                 if (actualDateIndex < 0 || actualDateIndex >= listOfDatesInMonth(_selectedDate).length) {
-                                  return Container(); // Return an empty Container for invalid indices
+                                  return Container();
                                   }
                                   return Padding(
                                     padding: const EdgeInsets.all(10),
@@ -185,7 +187,6 @@ class _HomePageState extends State<HomePage> {
                                             borderRadius: BorderRadius.circular(50),
                                             ),
                                             child: Text(
-                                              // Display the actual date based on the calculated index
                                               '${actualDateIndex + 1}',
                                               style: GoogleFonts.lato(
                                               color: actualDateIndex == _selectedIndex
@@ -295,9 +296,7 @@ class _HomePageState extends State<HomePage> {
                  ),
                ),
             
-               
-            
-                // "Recent Forum" text
+                // "Recent articles" text
                 Padding(
                   padding: const EdgeInsets.only(left: 35.0),
                   child: Align(
@@ -362,13 +361,18 @@ class _HomePageState extends State<HomePage> {
                            color: Color(0xFFDEEDFF),
                            borderRadius: BorderRadius.circular(15),
                         ),
+
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
                               imageAssets[count],
+                              width: 170,
+                              height: 140,
                               fit: BoxFit.cover,
+                              
                               ),
+                            SizedBox(height:10),
                             Text(
                             postsBoxes[count],
                             style: GoogleFonts.lato(
@@ -454,4 +458,5 @@ final List<String> imageAssets = [
   'lib/assets/pregnant.png',
   'lib/assets/meal.png',
   'lib/assets/baby.png',
+  'lib/assets/tipsandtrick.png'
 ];

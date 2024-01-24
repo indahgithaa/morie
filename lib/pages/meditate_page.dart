@@ -18,39 +18,6 @@ class _MeditatePageState extends State<MeditatePage> {
     bool loaded = false; 
     bool playing = false; 
     
-    void loadMusic() async { 
-      await player.setUrl(musicUrl); 
-      setState(() { 
-        loaded = true; 
-      }); 
-    } 
-    
-    void playMusic() async { 
-      setState(() { 
-        playing = true; 
-      }); 
-      await player.play(); 
-    } 
-    
-    void pauseMusic() async { 
-      setState(() { 
-        playing = false; 
-      }); 
-      await player.pause(); 
-    } 
-    
-    @override 
-    void initState() { 
-      loadMusic(); 
-      super.initState(); 
-    } 
-    
-    @override 
-    void dispose() { 
-      player.dispose(); 
-      super.dispose(); 
-    }
-  
   @override 
 Widget build(BuildContext context) { 
     return Scaffold(
@@ -163,13 +130,11 @@ Widget build(BuildContext context) {
                       color: Color.fromRGBO(223, 237, 255, 1),
                     ),
                     child: Center(
-                    child: Text(
-                      '00:00',
-                      style: GoogleFonts.lato(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                              color: Colors.black),
-                    )  
+                    child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Color.fromRGBO(178, 213, 255, 1),
+                            size: 80,
+                        ), 
                   ) 
                   ),
                 
@@ -190,21 +155,11 @@ Widget build(BuildContext context) {
                         width: 50, 
                         decoration: const BoxDecoration( 
                             shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
-                                    } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
+                        child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Colors.white,
+                            size: 30,
+                        ), 
                       ), 
                       ),
                     ),
@@ -263,21 +218,11 @@ Widget build(BuildContext context) {
                         width: 50, 
                         decoration: const BoxDecoration( 
                             shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
-                                    } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
+                        child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Colors.white,
+                            size: 30,
+                        ),  
                       ), 
                       ),
                     ),
@@ -336,21 +281,11 @@ Widget build(BuildContext context) {
                         width: 50, 
                         decoration: const BoxDecoration( 
                             shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
-                                    } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
+                        child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Colors.white,
+                            size: 30,
+                        ), 
                       ), 
                       ),
                     ),
@@ -409,21 +344,11 @@ Widget build(BuildContext context) {
                         width: 50, 
                         decoration: const BoxDecoration( 
                             shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
-                                    } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
+                        child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Colors.white,
+                            size: 30,
+                        ), 
                       ), 
                       ),
                     ),
@@ -482,21 +407,11 @@ Widget build(BuildContext context) {
                         width: 50, 
                         decoration: const BoxDecoration( 
                             shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
-                                    } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
+                        child: Icon(
+                            playing ? Icons.pause : Icons.play_arrow,
+                            color: Colors.white,
+                            size: 30,
+                        ), 
                       ), 
                       ),
                     ),

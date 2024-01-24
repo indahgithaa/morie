@@ -7,11 +7,13 @@ import 'package:morie/pages/home_page.dart';
 import 'package:morie/pages/meditate_page.dart';
 import 'package:morie/pages/relax_page.dart';
 import 'package:morie/pages/relax_second_page.dart';
+import 'package:morie/pages/test.dart';
 import 'auth/main_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'pages/breathe_second_page.dart';
 import 'pages/meditate_second_page.dart';
+import 'pages/test.dart';
 
 
 void main() async {
