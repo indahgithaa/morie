@@ -69,6 +69,84 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   ],
                 )
               ),
+              SizedBox(height: 25),
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(children: [
+                        Transform.scale(
+                            scale: 2,
+                            child: Checkbox(
+                                value: false,
+                                side: BorderSide(color: Colors.black, width: 1),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(3)),
+                                fillColor:
+                                    MaterialStateProperty.all(Color(0xffD9D9D9)),
+                                activeColor: Color(0xff0070F4),
+                                onChanged: (v) {})),
+                        SizedBox(width: 10),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Private",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 3),
+                            Text("Only you can see this post",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.normal))
+                          ],
+                        )
+                      ]),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(children: [
+                        Transform.scale(
+                          scale: 2,
+                          child: Checkbox(
+                            value: false,
+                            side: BorderSide(color: Colors.black, width: 1),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(3)),
+                            fillColor:
+                                MaterialStateProperty.all(Color(0xffD9D9D9)),
+                            activeColor: Color(0xff0070F4),
+                            onChanged: (v) {}
+                          )
+                        ),
+                        SizedBox(width: 8),
+                        Expanded(
+                            child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Open for Discussion",
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 3),
+                              Text("Ask help from experienced mothers out there",
+                                  style: TextStyle(
+                                      fontSize: 13, fontWeight: FontWeight.normal))
+                              ],
+                            )
+                          )
+                        ]
+                      ),
+                    ),
+                    
+                  ],
+                ),
+              ),
             ],
           ),
         ),
