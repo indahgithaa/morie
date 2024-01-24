@@ -74,6 +74,7 @@ flutter:
     - assets/nadia.jpg
     - assets/joshua.jpg
     - assets/icons/ 
+    - assets/circle_bg_topleft.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

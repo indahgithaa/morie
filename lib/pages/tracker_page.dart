@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
+import 'package:morie/pages/tracker_pages/add_post_page.dart';
 
 class TrackerPage extends StatefulWidget {
   const TrackerPage({super.key});
@@ -46,7 +47,11 @@ class _TrackerPageState extends State<TrackerPage> {
                       size: 45,
                     ),
                     onPressed: () {
-                      // ...
+                       Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        AddPostScreen()));
                     },
                   )),
             ),
