@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:morie/pages/tracker_pages/notify_me_page.dart';
 
 class AddTitlePostScreen extends StatefulWidget {
   const AddTitlePostScreen({super.key});
@@ -249,7 +250,11 @@ class _AddTitlePostScreenState extends State<AddTitlePostScreen> {
                         margin: EdgeInsets.symmetric(horizontal: 20),
                         child: ElevatedButton(
                           onPressed: () {
-                            // notify me
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        NotifyMeScreen()));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xffA7CFFF),

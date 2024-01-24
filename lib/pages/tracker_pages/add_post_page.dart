@@ -67,6 +67,18 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         fillColor: Color(0xff6C90BC)
                       ),
                     ),
+                    Positioned(
+                      bottom: 20.0,
+                      left: 20.0,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          SvgPicture.asset('assets/icons/gallery.svg'),
+                          SizedBox(width: 25),
+                          SvgPicture.asset('assets/icons/camera.svg'),
+                        ],
+                      )
+                    )
                   ],
                 )
               ),
