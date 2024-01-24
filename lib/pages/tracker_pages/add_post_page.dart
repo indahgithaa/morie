@@ -143,7 +143,32 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         ]
                       ),
                     ),
-                    
+                    SizedBox(height: 40),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        width: 110,
+                        height: 40,
+                        padding: EdgeInsets.only(top: 4),
+                        margin: EdgeInsets.symmetric(horizontal: 20),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              //next page
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xffA7CFFF),
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(10), // <-- Radius
+                              ),
+                            ),
+                            child: Text(
+                              "Send",
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.black87),
+                            )),
+                      ),
+                    )
                   ],
                 ),
               ),
