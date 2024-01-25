@@ -23,7 +23,9 @@ class _TrackerPageState extends State<TrackerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2fffe),
       appBar: AppBar(
+        backgroundColor: Color(0xfff2fffe),
         actions: [
           Container(
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),

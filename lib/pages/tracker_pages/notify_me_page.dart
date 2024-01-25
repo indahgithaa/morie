@@ -9,9 +9,13 @@ class NotifyMeScreen extends StatefulWidget {
 }
 
 class _NotifyMeScreenState extends State<NotifyMeScreen> {
+  bool isChecked = false;
+  double scale = 1.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2fffe),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -49,15 +53,19 @@ class _NotifyMeScreenState extends State<NotifyMeScreen> {
                           Transform.scale(
                             scale: 2,
                             child: Checkbox(
-                              value: false,
-                              side: BorderSide(color: Colors.black, width: 1),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              fillColor:
-                                  MaterialStateProperty.all(Color(0xffD9D9D9)),
-                              activeColor: Color(0xff0070F4),
-                              onChanged: (v) {},
+                              value: isChecked,
+    side: BorderSide(color: Colors.black, width: 1),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(3),
+    ),
+    fillColor: MaterialStateProperty.all(isChecked ? Color(0xff0070F4) : Color(0xffD9D9D9)),
+    activeColor: Color(0xff0070F4),
+    onChanged: (value) {
+      setState(() {
+        isChecked = value ?? false;
+        scale = isChecked ? 2.0 : 1.0;
+      });
+    },
                             ),
                           ),
                           SizedBox(width: 10),

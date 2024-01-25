@@ -13,6 +13,7 @@ class Topic {
 
 class ForumPage extends StatelessWidget {
   List<Topic> topics = [
+    Topic('@emma3113', 'assets/mom_profpic.png', 'my toddler stories!', 'diaper rash', 'my son got a severe diaper rash. how to get rid of it? any tips?', ''),
     Topic('@sitied', 'assets/sitied_profpic.png', 'soon to be mom', 'Pregnancy Update, Yoga stuff.', 'Just wanted to share a little snippet of my pregnancy journey intertwined with the soothing embrace of yoga. These prenatal yoga sessions have become my sanctuary, a sacred time where I connect with both my body and the tiny soul growing within.', 'assets/yoga_pic.png'),
     Topic('@mum', 'assets/mum_profpic.png', 'Average housewife', 'Delicious healthy recipe for mom! :D', 'Just wanted to drop a quick note from the heart of daily homemaker life. Juggling chores, meals, and the never-ending laundry feels like a marathon sometimes, but there\'s a unique magic in it all. From the sizzling sounds in the kitchen to the cozy chaos of family life, these are the real moments that make a home.', ''),
   ];
@@ -20,12 +21,21 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor: Color(0xfff2fffe),
      body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
             SliverToBoxAdapter(
               child: Container(
-                  margin: EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 0),
+                alignment: Alignment.centerRight,
+                  decoration: BoxDecoration(
+                  ),
+                  margin: EdgeInsets.only(top: 70, left: 20, right: 20, bottom: 0)
+                ),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                  margin: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 0),
                   child: Text(
                     'Your answer is everything.\nStay linked - stay resilient.',
                     style: TextStyle(
@@ -81,7 +91,9 @@ class ForumPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                      
                     ],
+                    
                   ),
                 ),
             ),
@@ -188,37 +200,46 @@ class ForumPage extends StatelessWidget {
                               radius: 20,
                             ),
                             SizedBox(width: 16),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      topics[index].username,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        topics[index].username,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'Follow',
-                                      style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 14,
+                                      SizedBox(width: 8),
+                                      Text(
+                                        'Follow',
+                                        style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  topics[index].userStatus,
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 14,
+                              
+                                    ],
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    topics[index].userStatus,
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
+                                    Expanded(
+                                      child: Container(
+                                        alignment: Alignment.centerRight,
+                                        child: Icon(Icons.close, size: 24,),
+                                      ),
+                                    )
                           ],
                         ),
                         SizedBox(height: 8),
@@ -241,6 +262,35 @@ class ForumPage extends StatelessWidget {
                           margin: EdgeInsets.only(top: 10),
                           child: Image.asset(topics[index].imagePath),
                         ),
+                        SizedBox(height: 14.0,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,children: [
+                          
+                          Container(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.arrow_upward,)),
+                          ])),
+                          SizedBox(width: 14.0,),
+                          Container(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.reply,)),
+                          ])),
+                          Expanded(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.bookmark_add_outlined,)),
+                          ])),
+                            Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.more_horiz,)),
+                        ],)
                     ],
                   ),
                   onTap: () {
@@ -269,7 +319,9 @@ class TopicDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor: Color(0xfff2fffe),
       appBar: AppBar(
+              backgroundColor: Color(0xfff2fffe),
         title: Text('Post'),
       ),
       body: Padding(
@@ -313,6 +365,12 @@ class TopicDetailsPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                          Expanded(
+                                      child: Container(
+                                        alignment: Alignment.centerRight,
+                                        child: Icon(Icons.close, size: 24,),
+                                      ),
+                                    )
                 ],
               ),
               SizedBox(height: 16),
@@ -329,6 +387,35 @@ class TopicDetailsPage extends StatelessWidget {
                 margin: EdgeInsets.only(top: 10),
                 child: Image.asset(topic.imagePath),
               ),
+              SizedBox(height: 14.0,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,children: [
+                          
+                          Container(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.arrow_upward,)),
+                          ])),
+                          SizedBox(width: 14.0,),
+                          Container(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.reply,)),
+                          ])),
+                          Expanded(child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text("0", style: TextStyle(fontSize: 14),),
+                              Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.bookmark_add_outlined,)),
+                          ])),
+                            Container(
+                              alignment: Alignment.centerRight,child: Icon(Icons.more_horiz,)),
+                        ],)
             ],
           ),
         ),

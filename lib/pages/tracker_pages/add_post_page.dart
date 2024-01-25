@@ -10,9 +10,13 @@ class AddPostScreen extends StatefulWidget {
 }
 
 class _AddPostScreenState extends State<AddPostScreen> {
+  bool isChecked = false;
+  double scale = 1.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff2fffe),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -52,6 +56,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       maxLines: null,
                       expands: true,
                       textAlignVertical: TextAlignVertical.top,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: "Write something...",
                         contentPadding: EdgeInsets.symmetric(
@@ -65,6 +70,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         ),
                         filled: true,
                         fillColor: Color(0xff6C90BC)
+                        
                       ),
                     ),
                     Positioned(
@@ -126,14 +132,19 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         Transform.scale(
                           scale: 2,
                           child: Checkbox(
-                            value: false,
-                            side: BorderSide(color: Colors.black, width: 1),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(3)),
-                            fillColor:
-                                MaterialStateProperty.all(Color(0xffD9D9D9)),
-                            activeColor: Color(0xff0070F4),
-                            onChanged: (v) {}
+                             value: isChecked,
+    side: BorderSide(color: Colors.black, width: 1),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(3),
+    ),
+    fillColor: MaterialStateProperty.all(isChecked ? Color(0xff0070F4) : Color(0xffD9D9D9)),
+    activeColor: Color(0xff0070F4),
+    onChanged: (value) {
+      setState(() {
+        isChecked = value ?? false;
+        scale = isChecked ? 2.0 : 1.0;
+      });
+    },
                           )
                         ),
                         SizedBox(width: 8),

@@ -40,6 +40,7 @@ dependencies:
   calendar_date_picker2: ^0.5.3
   firebase_auth: ^4.16.0
   firebase_core: ^2.24.2
+  google_fonts: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,11 @@ flutter:
     - assets/joshua.jpg
     - assets/icons/ 
     - assets/circle_bg_topleft.png
+    - assets/header.png
+    - assets/baby.png
+    - assets/meal.png
+    - assets/tipsandtrick.png
+    - assets/pregnant.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -220,6 +220,7 @@ class DoctorCard extends StatelessWidget {
                       color: Color(0xFF000000),
                     ),
                   ),
+                  SizedBox(height: 3),
                   Text(
                     doctor.job,
                     style: TextStyle(
@@ -227,9 +228,10 @@ class DoctorCard extends StatelessWidget {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       height: 1.5,
-                      color: Color(0xFF000000),
+                      color: Colors.grey,
                     ),
                   ),
+                  SizedBox(height: 3),
                   Row(
                     children: [
                       Icon(
@@ -260,7 +262,7 @@ class DoctorCard extends StatelessWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                           height: 1.5,
-                          color: Color(0xFF000000),
+                          color: Colors.grey,
                         ),
                       ),
                     ],
@@ -273,7 +275,7 @@ class DoctorCard extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xFF006EF9),
                       onPrimary: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40), // Wider button and centered horizontally
+                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16), // Wider button and centered horizontally
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
