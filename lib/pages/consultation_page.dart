@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:morie/pages/doctor_page.dart';
 
 class Doctor {
   String price;
@@ -270,7 +271,11 @@ class DoctorCard extends StatelessWidget {
                   SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
-                      // Add your button functionality here
+                        Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        DoctorPage()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xFF006EF9),
