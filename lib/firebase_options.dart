@@ -66,6 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '546992058889',
     projectId: 'morie-c78f8',
     storageBucket: 'morie-c78f8.appspot.com',
+    androidClientId: '546992058889-r7ctvm20ierkh290hsg5o380tusaukgh.apps.googleusercontent.com',
+    iosClientId: '546992058889-mca6di6a2anf6pg2cfgq9f6o8h11jr1i.apps.googleusercontent.com',
     iosBundleId: 'com.example.morie',
   );
 
@@ -75,6 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '546992058889',
     projectId: 'morie-c78f8',
     storageBucket: 'morie-c78f8.appspot.com',
+    androidClientId: '546992058889-r7ctvm20ierkh290hsg5o380tusaukgh.apps.googleusercontent.com',
+    iosClientId: '546992058889-ge1qjko39cpqtrapf9qpp0k6td542b2j.apps.googleusercontent.com',
     iosBundleId: 'com.example.morie.RunnerTests',
   );
 }

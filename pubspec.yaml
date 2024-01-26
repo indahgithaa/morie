@@ -25,6 +25,8 @@ dependencies:
   assets_audio_player: ^3.1.1
   http: ^1.1.2
   path_provider: ^2.0.2
+  flutter_svg: ^2.0.9
+  calendar_date_picker2: ^0.5.3
 
 dev_dependencies:
   flutter_test:
@@ -40,3 +42,15 @@ flutter:
   - lib/assets/meal.png
   - lib/assets/pregnant.png
   - lib/assets/nature_sounds.mp3
+  - lib/assets/tipsandtrick.png
+  - lib/assets/mom_profpic.svg
+  - lib/assets/mom_profpic.png
+  - lib/assets/sitied_profpic.png
+  - lib/assets/mum_profpic.png
+  - lib/assets/yoga_pic.png
+  - lib/assets/amrita.jpg
+  - lib/assets/nadia.jpg
+  - lib/assets/joshua.jpg
+  - lib/assets/icons/ 
+  - lib/assets/circle_bg_topleft.png
+ 

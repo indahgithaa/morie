@@ -8,6 +8,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "args",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/args-2.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "assets_audio_player",
       "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/assets_audio_player-3.1.1",
       "packageUri": "lib/",
@@ -102,6 +108,12 @@
       "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/cached_network_image_web-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "calendar_date_picker2",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/calendar_date_picker2-0.5.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "characters",
@@ -224,6 +236,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/sfatimahazzahra/Downloads/Flutter-Slicing-UI-BSI-MOBILE-main/android/app/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -285,7 +303,7 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/http-1.1.2",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/http-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -362,6 +380,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path_provider",
       "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/path_provider-2.1.2",
       "packageUri": "lib/",
@@ -398,6 +422,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "petitparser",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/platform-3.1.4",
       "packageUri": "lib/",
@@ -429,13 +459,13 @@
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/sqflite-2.3.0",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/sqflite-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/sqflite_common-2.5.0+2",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/sqflite_common-2.5.3",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -488,6 +518,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "vector_graphics",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/vector_graphics-1.1.9+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_codec",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.9+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_compiler",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.9+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -512,13 +560,19 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/sfatimahazzahra/.pub-cache/hosted/pub.dev/xml-6.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "morie",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-01-24T13:26:41.039893Z",
+  "generated": "2024-01-26T08:56:45.797556Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
