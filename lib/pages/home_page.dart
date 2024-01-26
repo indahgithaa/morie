@@ -39,12 +39,12 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 SizedBox(height:70),
-                //  Positioned(
-                //   top: 0,
-                //   left: 0,
-                //   right: 0,
-                //   child: Image.asset('lib/assets/header.png'),
-                // ),
+                 Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Image.asset('lib/assets/header.png'),
+                ),
                
                 // "hello, emma!" text
                 Padding(

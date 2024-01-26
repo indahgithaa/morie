@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:morie/pages/relax_second_page.dart';
 
 
 class RelaxPage extends StatefulWidget {
@@ -178,74 +179,82 @@ class _RelaxPageState extends State<RelaxPage> {
               ),
               SizedBox(height: 20),
               
-              Center(
-                child: Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      flex: 1,
-                      child: Padding(
-                       padding: EdgeInsets.only(left: 10, right: 10),
-                        child: Container( 
-                        height: 50, 
-                        width: 50, 
-                        decoration: const BoxDecoration( 
-                            shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
-                        child: IconButton( 
-                            onPressed: loaded 
-                                ? () { 
-                                    if (playing) { 
-                                      pauseMusic(); 
-                                    } else { 
-                                      playMusic(); 
+              InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RelaxSecondPage()),
+                );
+              },
+                child: Center(
+                  child: Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                         padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Container( 
+                          height: 50, 
+                          width: 50, 
+                          decoration: const BoxDecoration( 
+                              shape: BoxShape.circle, color: Color.fromRGBO(178, 213, 255, 1)), 
+                          child: IconButton( 
+                              onPressed: loaded 
+                                  ? () { 
+                                      if (playing) { 
+                                        pauseMusic(); 
+                                      } else { 
+                                        playMusic(); 
+                                      } 
                                     } 
-                                  } 
-                                : null, 
-                            icon: Icon( 
-                              playing ? Icons.pause : Icons.play_arrow, 
-                              color: Colors.white,
-                              size: 30,
-                            )), 
-                      ), 
-                      ),
-                    ),
-                
-                    Flexible(
-                      flex: 3,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 45, right: 45),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Calming Noon 🍃',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lato(
-                                fontSize: 18,
-                                color: Colors.black),
-                            ),
-                            Text(
-                              '1 min',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lato(
-                                fontSize: 12,
-                                color: Colors.black),
-                            ),
-                          ],
+                                  : null, 
+                              icon: Icon( 
+                                playing ? Icons.pause : Icons.play_arrow, 
+                                color: Colors.white,
+                                size: 30,
+                              )), 
+                        ), 
                         ),
                       ),
-                    ),
-                    
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        child: Icon(Icons.star, 
-                        size: 50,
-                        color: Color.fromRGBO(178, 213, 255, 1)),
+                  
+                      Flexible(
+                        flex: 3,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 45, right: 45),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Calming Noon 🍃',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.lato(
+                                  fontSize: 18,
+                                  color: Colors.black),
+                              ),
+                              Text(
+                                '1 min',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.lato(
+                                  fontSize: 12,
+                                  color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    )
-                  ],
+                      
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          child: Icon(Icons.star, 
+                          size: 50,
+                          color: Color.fromRGBO(178, 213, 255, 1)),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
 

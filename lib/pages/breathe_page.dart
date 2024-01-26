@@ -134,7 +134,12 @@ class _BreathePageState extends State<BreathePage> {
                         color: Color.fromRGBO(178, 213, 255, 1),
                         size: 80,
                       ),
-                      onPressed: playPauseMusic,
+                      onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BreatheSecondPage()),
+                          );
+                        },
                     ),
                   ),
                 ],
