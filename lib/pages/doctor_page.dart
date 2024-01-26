@@ -7,14 +7,11 @@ class DoctorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Relax Page"),
-      ),
       body: Stack(
         children: [
           Positioned(
             left: 15,
-            top: 70,
+            top: 60,
             child: Container(
               width: 199,
               height: 25,
@@ -170,7 +167,6 @@ class DoctorPage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 17 * fem, 0 * fem),
                     width: 102 * fem,
-                    height: double.infinity,
                     child: Stack(
                       children: [
                         Positioned(
@@ -235,7 +231,6 @@ class DoctorPage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 18 * fem, 0 * fem),
                     width: 102 * fem,
-                    height: double.infinity,
                     child: Stack(
                       children: [
                         Positioned(
@@ -299,7 +294,6 @@ class DoctorPage extends StatelessWidget {
                   ),
                   Container(
                     width: 102 * fem,
-                    height: double.infinity,
                     child: Stack(
                       children: [
                         Positioned(
@@ -365,150 +359,88 @@ class DoctorPage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            left: 258.5 * fem,
-            top: 0 * fem,
-            child: Center(
-              child: Align(
-                child: SizedBox(
-                  width: 59 * fem,
-                  height: 23 * fem,
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 10 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 2.3 * ffem / fem,
-                        color: Color(0xff6b90bb),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'All Reviews ',
-                        ),
-                        TextSpan(
-                          text: '>',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 10 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 2.3 * ffem / fem,
-                            color: Color(0xff6b90bb),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-         // ... (Previous code)
-
-          Positioned(
-            left: 258.5 * fem,
-            top: 71 * fem,  // Adjusted the top position
-            child: Center(
-              child: Align(
-                child: SizedBox(
-                  width: 59 * fem,
-                  height: 23 * fem,
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 10 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 2.3 * ffem / fem,
-                        color: Color(0xff6b90bb),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'All Reviews ',
-                        ),
-                        TextSpan(
-                          text: '>',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 10 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 2.3 * ffem / fem,
-                            color: Color(0xff6b90bb),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 0 * fem,
-            top: 92.5 * fem,  // Adjusted the top position
-            child: Align(
-              child: SizedBox(
-                width: 327 * fem,
-                height: 57 * fem,
-                child: Container(
-                  decoration: BoxDecoration(
+          Container(
+            margin: EdgeInsets.fromLTRB(248 * fem, 295 * fem, 0, 0),
+            child: SizedBox(
+              width: 59 * fem,
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 10 * ffem,
+                    fontWeight: FontWeight.w400,
+                    height: 2.3 * ffem / fem,
                     color: Color(0xff6b90bb),
                   ),
+                  children: [
+                    TextSpan(
+                      text: 'All Reviews ',
+                    ),
+                    TextSpan(
+                      text: '>',
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 10 * ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 2.3 * ffem / fem,
+                        color: Color(0xff6b90bb),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
-          Positioned(
-            left: 52 * fem,
-            top: 101 * fem,  // Adjusted the top position
+         
+          Container(
+            // Adjusted the top position
+            margin: EdgeInsets.fromLTRB(49 * fem, 353 * fem, 0, 0),
             child: Center(
-              child: Align(
-                child: SizedBox(
-                  width: 217 * fem,
-                  height: 45 * fem,
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 10 * ffem,
-                        fontWeight: FontWeight.w400,
-                        height: 1.5 * ffem / fem,
-                        fontStyle: FontStyle.italic,
-                        color: Color(0xffffffff),
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'Very recommended! Dr. Amrita is very helpful and friendly. Thank you!\n',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 10 * ffem,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5 * ffem / fem,
-                            fontStyle: FontStyle.italic,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                        TextSpan(
-                          text: 'Andri Permatasari',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 10 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.5 * ffem / fem,
-                            fontStyle: FontStyle.italic,
-                            color: Color(0xffffffff),
-                          ),
-                        ),
-                      ],
+              child: SizedBox(
+                width: 217 * fem,
+                height: 45 * fem,
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontFamily: 'Lato',
+                      fontSize: 10 * ffem,
+                      fontWeight: FontWeight.w400,
+                      height: 1.5 * ffem / fem,
+                      fontStyle: FontStyle.italic,
+                      color: Color(0xffffffff),
                     ),
+                    children: [
+                      TextSpan(
+                        text: 'Very recommended! Dr. Amrita is very helpful and friendly. Thank you!\n',
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 10 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5 * ffem / fem,
+                          fontStyle: FontStyle.italic,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Andri Permatasari',
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 10 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.5 * ffem / fem,
+                          fontStyle: FontStyle.italic,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
           ),
+
           // ... Additional Positioned widgets and components ...
         ],
       ),

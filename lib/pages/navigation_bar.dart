@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:morie/pages/forum_page.dart';
 import 'package:morie/pages/home_page.dart';
 import 'package:morie/pages/tracker_page.dart';
-import 'package:morie/pages/relax_page.dart';
+import 'package:morie/pages/break_page.dart';
 import 'package:morie/pages/consultation_page.dart';
 
 void main() {

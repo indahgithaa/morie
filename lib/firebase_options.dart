@@ -44,38 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCZITJj89SX5luHL7QO9yAtlRB_ocvFCX0',
-    appId: '1:366532402875:web:6ccdb2faf33f57154c139e',
-    messagingSenderId: '366532402875',
-    projectId: 'morie-7f242',
-    authDomain: 'morie-7f242.firebaseapp.com',
-    storageBucket: 'morie-7f242.appspot.com',
-    measurementId: 'G-EQ8D2DYQ4E',
+    apiKey: 'AIzaSyD5IYI2fRmyJqATLuabOQ2xPcE_cyViPQE',
+    appId: '1:546992058889:web:556caee9bd7734127b3ed8',
+    messagingSenderId: '546992058889',
+    projectId: 'morie-c78f8',
+    authDomain: 'morie-c78f8.firebaseapp.com',
+    storageBucket: 'morie-c78f8.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAD7Lh7vNLU1Z-SxPkIODL8AIRclO6Tsoc',
-    appId: '1:366532402875:android:02c281b58211b4a74c139e',
-    messagingSenderId: '366532402875',
-    projectId: 'morie-7f242',
-    storageBucket: 'morie-7f242.appspot.com',
+    apiKey: 'AIzaSyBmxVcdCbTcRiHdMOPBx7Flflx4PiiUZvc',
+    appId: '1:546992058889:android:7b601039edf716227b3ed8',
+    messagingSenderId: '546992058889',
+    projectId: 'morie-c78f8',
+    storageBucket: 'morie-c78f8.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBf5QmjhXhUQ19KvFL8Ps9Y9AJWkZaXhoY',
-    appId: '1:366532402875:ios:4f3e7f691d9d002c4c139e',
-    messagingSenderId: '366532402875',
-    projectId: 'morie-7f242',
-    storageBucket: 'morie-7f242.appspot.com',
+    apiKey: 'AIzaSyCVLuWv__dY_JjQ47yx9KBEUvDX6fRlKBM',
+    appId: '1:546992058889:ios:c17b1e36589635bd7b3ed8',
+    messagingSenderId: '546992058889',
+    projectId: 'morie-c78f8',
+    storageBucket: 'morie-c78f8.appspot.com',
     iosBundleId: 'com.example.morie',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBf5QmjhXhUQ19KvFL8Ps9Y9AJWkZaXhoY',
-    appId: '1:366532402875:ios:32eafae79a7bd1634c139e',
-    messagingSenderId: '366532402875',
-    projectId: 'morie-7f242',
-    storageBucket: 'morie-7f242.appspot.com',
+    apiKey: 'AIzaSyCVLuWv__dY_JjQ47yx9KBEUvDX6fRlKBM',
+    appId: '1:546992058889:ios:cb3f7d08861431af7b3ed8',
+    messagingSenderId: '546992058889',
+    projectId: 'morie-c78f8',
+    storageBucket: 'morie-c78f8.appspot.com',
     iosBundleId: 'com.example.morie.RunnerTests',
   );
 }

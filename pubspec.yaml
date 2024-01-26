@@ -40,7 +40,10 @@ dependencies:
   calendar_date_picker2: ^0.5.3
   firebase_auth: ^4.16.0
   firebase_core: ^2.24.2
-  google_fonts: ^2.0.0
+  google_fonts: ^4.0.4
+  just_audio: any
+  audio_video_progress_bar: any
+  audioplayers: any
 
 dev_dependencies:
   flutter_test:
